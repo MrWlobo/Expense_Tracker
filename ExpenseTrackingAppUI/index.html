@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UFT-8">
+        <title>Expense Tracker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+
+    <body>
+        <nav>Navigation bar</nav>
+        <main>
+            <div class="side-board">
+                <p class="title">Recent Expenses</p>
+                <ul class="side-board-list" id="recent-expenses-list">
+                </ul>
+            </div>
+
+            <div class="center-content">
+                <div class="main-content">
+                    <h1>Expense Tracker</h1>
+                    <p id="main-summary"></p>
+                </div>
+                <div class="button-group">
+                    <a href="structure/chartsPanel.html">
+                        <button class="button">See Charts</button>
+                    </a>
+                    
+                    <a href="structure/expensesDetailsPanel.html">
+                        <button class="button">See Expenses' Details</button>
+                    </a>
+
+                    <a href="structure/expensePanel.html">
+                        <button class="button">Manage Expenses</button>
+                    </a>
+
+                    <a href="structure/categoryPanel.html">
+                        <button class="button">Manage Categories</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="side-board">
+                <p class="title">Budget Goal</p>
+                <p class="title" id="progress-title">1000/4000 PLN</p>
+                <progress value="1000" max="4000" id="progress-bar"></progress>
+            </div>
+        </main>
+        <footer>Expense Tracker 2026</footer>
+
+        <script src="script/indexScript.js"></script>
+    </body>
+</html>

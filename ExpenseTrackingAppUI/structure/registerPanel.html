@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UFT-8">
+        <title>Expense Tracker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/style.css">
+    </head>
+    <body>
+        <main>
+            <div class="center-content">
+                <div class="main-content">
+                    <h1>Account Creation</h1>
+                    <form>
+                        <label for="login-input" class="title">Login</label>
+                        <input type="text" placeholder="Login" maxlength="40" minlength="3" id="login-input" autocomplete="off" class="input-field" required>
+
+                        <label for="password-input" class="title">Password</label>
+                        <input type="password" placeholder="Password" minlength="3" id="password-input" autocomplete="off" class="input-field" required>
+
+                        <label for="expense-goal-input" class="title">Expense Goal</label>
+                        <input type="number" placeholder="Expense Goal" id="expense-goal-input" autocomplete="off" class="input-field" required value="1000">
+
+                        <label for="currency-input" class="title">Currency</label>
+                        <input type="text" placeholder="Currency" minlength="3" maxlength="3" id="currency-input" autocomplete="off" class="input-field" required value="PLN">
+                        <br>
+
+                        <input type="submit" value="Register">
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>Expense Tracker 2026</footer>
+        <script src="../script/registrationScript.js"></script>
+    </body>
+</html>
