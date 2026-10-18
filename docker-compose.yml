@@ -1,0 +1,42 @@
+services:
+  web-api:
+    image: expense-tracking-api
+    build:
+      context: ./expense_tracking_api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql://postgres:${DB_PASSWORD}@db:5432/expense_tracking_db
+
+  frontend:
+      image: expense-tracking-ui
+      build:
+        context: ./expense_tracking_ui
+        dockerfile: Dockerfile
+      ports:
+        - "3000:80"
+      depends_on:
+        - web-api
+
+  db:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=expense_tracking_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d expense_tracking_db"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
