@@ -2,7 +2,7 @@ services:
   web-api:
     image: expense-tracking-api
     build:
-      context: ./expense_tracking_api
+      context: ./ExpenseTrackingApp
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
@@ -15,7 +15,7 @@ services:
   frontend:
       image: expense-tracking-ui
       build:
-        context: ./expense_tracking_ui
+        context: ./ExpenseTrackingAppUI
         dockerfile: Dockerfile
       ports:
         - "3000:80"
